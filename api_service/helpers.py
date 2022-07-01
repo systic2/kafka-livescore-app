@@ -205,7 +205,7 @@ class Game:  # Game 데이터클래스
             print(event)
             print(traceback.format_exc())
 
-    @staticmethod  #
+    @staticmethod  # 부모 클래스의 클래스 속성 값을 상속
     def __is_goal(event):
         return event["type"]["id"] == Types.SHOT \
                and event["shot"]["outcome"]["id"] == Outcomes.GOAL
@@ -282,7 +282,7 @@ class DataManager:  # DataManager 클래스
         )
 
 
-class ConnectionManager:
+class ConnectionManager:  # ConnectionManager 클래스
     def __init__(self):  # 생성자
         self.active_connections: List[WebSocket] = []  # active_connections 에 WebSocket 리스트 저장
 
